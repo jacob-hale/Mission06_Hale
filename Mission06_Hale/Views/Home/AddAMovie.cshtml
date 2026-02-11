@@ -4,17 +4,8 @@
 }
 @model Movie
 <h1>Add a Movie into the Collection</h1>
-@* Form to add a movie to the collection *@
-@* name, rating, edited, lent to, and notes *@
-
-@* Rating field (dropdown) *@
-
-@* Edited, lent to and notes not required *@
-
-@* notes imited to 25 characters *@
-<h1>Enter a movie into the collection</h1>
 <div>
-    <form>
+    <form method="post">
         <label asp-for="Category">Category:</label >
         <input asp-for="Category" required />
         <br />
