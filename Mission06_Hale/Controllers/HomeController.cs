@@ -11,15 +11,14 @@ namespace Mission06_Hale.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult GetToKnowJoel()
         {
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult AddAMovie()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View();
         }
     }
 }
