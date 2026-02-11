@@ -12,38 +12,41 @@
 @* Edited, lent to and notes not required *@
 
 @* notes imited to 25 characters *@
-<form>
-    <label asp-for="Category">Category:</label >
-    <input asp-for="Category" required />
-    <br />
-    <label asp-for="Title">Title:</label>
-    <input asp-for="Title" required />
-    <br />
-    <label asp-for="Year">Year:</label>
-    <input asp-for="Year" required min="1888" />
-    <br />
-    <label asp-for="Director">Director:</label>
-    <input asp-for="Director" required />
-    <br />
-    <label asp-for="Rating">Rating:</label>
-    <select asp-for="Rating" required>
-        <option value="" disabled selected>Select a rating</option>
-        <option value="G">G</option>
-        <option value="PG">PG</option>
-        <option value="PG-13">PG-13</option>
-        <option value="R">R</option>
-        <option value="NR">NR</option>
-    </select>
-    <br />
-    <label asp-for="Edited">Edited:</label>
-    <input asp-for="Edited" />
-    <br />
-    <label asp-for="LentTo">Lent to:</label>
-    <input asp-for="LentTo" />
-    <br />
-    <label asp-for="Notes">Notes:</label>
-    <input asp-for="Notes" maxlength="25"/>
-    <br />
+<h1>Enter a movie into the collection</h1>
+<div>
+    <form>
+        <label asp-for="Category">Category:</label >
+        <input asp-for="Category" required />
+        <br />
+        <label asp-for="Title">Title:</label>
+        <input asp-for="Title" required />
+        <br />
+        <label asp-for="Year">Year:</label>
+        <input asp-for="Year" required min="1888" />
+        <br />
+        <label asp-for="Director">Director:</label>
+        <input asp-for="Director" required />
+        <br />
+        <label asp-for="Rating">Rating:</label>
+        <select asp-for="Rating" required>
+            <option value="" disabled selected>Select a rating</option>
+            <option value="G">G</option>
+            <option value="PG">PG</option>
+            <option value="PG-13">PG-13</option>
+            <option value="R">R</option>
+            <option value="NR">NR</option>
+        </select>
+        <br />
+        <label asp-for="Edited">Edited:</label>
+        <input asp-for="Edited" />
+        <br />
+        <label asp-for="LentTo">Lent to:</label>
+        <input asp-for="LentTo" />
+        <br />
+        <label asp-for="Notes">Notes:</label>
+        <input asp-for="Notes" maxlength="25"/>
+        <br />
 
-    <button type="submit">Submit Movie</button>
-</form>
+        <button type="submit">Submit Movie</button>
+    </form>
+</div>
