@@ -29,3 +29,17 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+
+/* Target the link and make it look like standard text */
+.stealth-link {
+    color: inherit; /* Takes the color of the surrounding text */
+    text-decoration: none; /* Removes the underline */
+    cursor: text; /* Makes the cursor look like it's over a p tag */
+}
+
+/* Bring back the "link" feel only on hover */
+.stealth-link:hover {
+    text-decoration: underline;
+    color: #007bff; /* Or any color you prefer */
+    cursor: pointer; /* Changes cursor to the hand icon */
+}

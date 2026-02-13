@@ -29,7 +29,10 @@
         </select>
         <br />
         <label asp-for="Edited">Edited:</label>
-        <input asp-for="Edited" />
+        <select asp-for="Edited">
+            <option value="false" selected>No</option>
+            <option value="true">Yes</option>
+        </select>
         <br />
         <label asp-for="LentTo">Lent to:</label>
         <input asp-for="LentTo" />
