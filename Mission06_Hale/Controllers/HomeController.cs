@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Mission06_Hale.Models;
 
 namespace Mission06_Hale.Controllers
@@ -31,10 +32,35 @@ namespace Mission06_Hale.Controllers
         [HttpPost]
         public IActionResult AddAMovie(Movie movie)
         {
-           _context.Movies.Add(movie);
-           _context.SaveChanges();
+            if (ModelState.IsValid)
+            {
+                _context.Movies.Add(movie);
+                _context.SaveChanges();
 
-            return View("Confirmation", movie);
+                return View("Confirmation", movie);
+            }
+            else
+            {
+                ViewBag.Categories = _context.Categories
+                .OrderBy(x => x.CategoryName)
+                .ToList();
+                return View(movie);
+            }
+        }
+
+        public IActionResult ViewAll()
+        {
+            var movies = _context.Movies
+                .Include(x => x.Category)
+                .Where(x => x.Title != null)
+                .OrderBy(x => x.Title)
+                .ToList();
+
+            //ViewBag.Categories = _context.Categories
+            //    .OrderBy(x => x.CategoryName)
+            //    .ToList();
+
+            return View(movies); 
         }
     }
 }

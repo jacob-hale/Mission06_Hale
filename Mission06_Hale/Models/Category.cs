@@ -8,6 +8,7 @@ namespace Mission06_Hale.Models
         [Key]
         [Required]
         public int CategoryId { get; set; }
+        [Required]
         public string CategoryName { get; set; }
     }
 }
