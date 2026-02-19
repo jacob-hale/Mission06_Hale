@@ -6,8 +6,8 @@ namespace Mission06_Hale.Controllers
 {
     public class HomeController : Controller
     {
-        private MovieCollectionContext _context;
-        public HomeController(MovieCollectionContext context)
+        private JoelHiltonMovieCollectionContext _context;
+        public HomeController(JoelHiltonMovieCollectionContext context)
         {
             _context = context;
         }

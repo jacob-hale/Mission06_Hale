@@ -9,7 +9,7 @@ using Mission06_Hale.Models;
 
 namespace Mission06_Hale.Migrations
 {
-    [DbContext(typeof(MovieCollectionContext))]
+    [DbContext(typeof(JoelHiltonMovieCollectionContext))]
     [Migration("20260211214753_initial2")]
     partial class initial2
     {

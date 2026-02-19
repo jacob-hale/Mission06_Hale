@@ -8,7 +8,7 @@ using Mission06_Hale.Models;
 
 namespace Mission06_Hale.Migrations
 {
-    [DbContext(typeof(MovieCollectionContext))]
+    [DbContext(typeof(JoelHiltonMovieCollectionContext))]
     partial class MovieCollectionContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

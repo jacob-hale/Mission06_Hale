@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<MovieCollectionContext>(options =>
+builder.Services.AddDbContext<JoelHiltonMovieCollectionContext>(options =>
 {
     options.UseSqlite(builder.Configuration["ConnectionStrings:MovieConnection"]);
 });
