@@ -23,7 +23,10 @@ namespace Mission06_Hale.Controllers
         [HttpGet]
         public IActionResult AddAMovie()
         {
-            return View();
+            ViewBag.Categories = _context.Categories
+                .OrderBy(x => x.CategoryName)
+                .ToList();
+            return View(new Movie());
         }
         [HttpPost]
         public IActionResult AddAMovie(Movie movie)
