@@ -22,7 +22,7 @@ namespace Mission06_Hale.Controllers
             return View();
         }
         [HttpGet]
-        public IActionResult AddAMovie()
+        public IActionResult AddMovie()
         {
             ViewBag.Categories = _context.Categories
                 .OrderBy(x => x.CategoryName)
@@ -30,7 +30,7 @@ namespace Mission06_Hale.Controllers
             return View(new Movie());
         }
         [HttpPost]
-        public IActionResult AddAMovie(Movie movie)
+        public IActionResult AddMovie(Movie movie)
         {
             if (ModelState.IsValid)
             {
@@ -51,16 +51,42 @@ namespace Mission06_Hale.Controllers
         public IActionResult ViewAll()
         {
             var movies = _context.Movies
-                .Include(x => x.Category)
+                .Include(x => x.Category) // Include the related Category data tied to each Movie
                 .Where(x => x.Title != null)
                 .OrderBy(x => x.Title)
                 .ToList();
 
-            //ViewBag.Categories = _context.Categories
-            //    .OrderBy(x => x.CategoryName)
-            //    .ToList();
-
+            
             return View(movies); 
         }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var recordToEdit = _context.Movies
+                .Single(x => x.MovieID == id);
+
+            ViewBag.Categories = _context.Categories
+                .OrderBy(x => x.CategoryName)
+                .ToList();
+
+            return View("AddMovie", recordToEdit); 
+
+        }
+        [HttpPost]
+        public IActionResult Edit(Movie updatedInfo)
+        {
+            _context.Movies.Update(updatedInfo);
+            _context.SaveChanges();
+
+
+            return RedirectToAction("ViewAll");
+        }
+
+        public IActionResult Delete()
+        {
+            return View();
+        }
+
     }
 }
