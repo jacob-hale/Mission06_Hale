@@ -5,8 +5,8 @@
 }
 @model List<Movie>
 
-<table class="table table-dark table-striped">
-        <thead>
+<table class="table table-striped table-hover table-bordered">
+    <thead>
             <tr>
                 <td>Category</td>
                 <td>Title</td>
@@ -17,8 +17,6 @@
                 <td>Lent To</td>
                 <td>Copied to Plex</td>
                 <td>Notes</td>
-                <td></td>
-                <td></td>
             </tr>
         </thead>
     @foreach (var m in Model)
@@ -36,7 +34,6 @@
                 <td>@m.Notes</td>
                 <td><a class="btn btn-info">Edit</a></td>
                 <td><a class="btn btn-danger">Delete</a></td>
-
             </tr>
 
         </tbody>
