@@ -83,10 +83,20 @@ namespace Mission06_Hale.Controllers
             return RedirectToAction("ViewAll");
         }
 
-        public IActionResult Delete()
+        [HttpGet]
+        public IActionResult Delete(int id)
         {
-            return View();
+            var recordToDelete = _context.Movies
+                    .Single(x => x.MovieID == id);
+            return View(recordToDelete);
         }
 
+        [HttpPost]
+        public IActionResult Delete(Movie movie)
+        {
+            _context.Movies.Remove(movie);
+            _context.SaveChanges();
+            return RedirectToAction("ViewAll");
+        }
     }
 }

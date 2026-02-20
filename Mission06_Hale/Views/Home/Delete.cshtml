@@ -3,3 +3,13 @@
 *@
 @{
 }
+@model Movie
+
+<h2>Confirm Deletion</h2>
+<h3>@Model.Title, @Model.Year</h3>
+<h4>Click 'Delete' if you don't want to keep @Model.Title in the collection.</h4>
+<form method="post">
+    <input type="hidden" asp-for="MovieID" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a class="btn btn-info" asp-controller="Home" asp-action="ViewAll">Cancel</a>
+</form>
